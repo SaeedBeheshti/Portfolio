@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saeed Beheshti | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #302b63, #24243e);
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #0f0c29;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #cc66ff;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #cc66ff;
+    }
+
+    .main-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .main-menu h1 {
+      font-size: 42px;
+      color: #cc66ff;
+    }
+
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .menu-buttons a {
+      padding: 12px 24px;
+      background: #1f1a3a;
+      color: white;
+      border: 2px solid #cc66ff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .menu-buttons a:hover {
+      background: #cc66ff;
+      color: #1f1a3a;
+    }
+
+    section#about {
+      padding: 100px 60px;
+      background-color: #1c1b3a;
+      text-align: center;
+      position: relative;
+    }
+
+    section#about h2 {
+      color: #cc66ff;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    section#about p {
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: auto;
+      color: #eee;
+    }
+
+    .icon-left,
+    .icon-right {
+      position: absolute;
+      font-size: 60px;
+      color: #cc66ff;
+      opacity: 0.3;
+    }
+
+    .icon-left {
+      left: 30px;
+      top: 40px;
+    }
+
+    .icon-right {
+      right: 30px;
+      bottom: 40px;
+    }
+
+    section#linkedin,
+    section#projects {
+      padding: 100px 60px;
+      background-color: #1a1833;
+      text-align: center;
+    }
+
+    section#linkedin h2,
+    section#projects h2 {
+      color: #cc66ff;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    section#linkedin p,
+    section#projects p {
+      font-size: 18px;
+      color: #eee;
+      margin-bottom: 40px;
+    }
+
+    section#linkedin i.fab.fa-linkedin,
+    section#projects i.fab.fa-github {
+      font-size: 80px;
+      color: #eee;
+      transition: 0.3s;
+    }
+
+    section#linkedin i.fab.fa-linkedin:hover,
+    section#projects i.fab.fa-github:hover {
+      color: #cc66ff;
+      transform: scale(1.1);
+    }
+
+    /* My Skills Section */
+    section#skills {
+      background-color: #0a0a1f;
+      background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+      background-size: cover;
+      padding: 100px 20px 60px;
+    }
+
+    section#skills h2 {
+      color: #cc66ff;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 50px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .skills-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #141426d9;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(204, 102, 255, 0.3);
+    }
+
+    .skills-box div {
+      margin-bottom: 30px;
+    }
+
+    .skills-box label {
+      display: block;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 6px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .skills-box .bar-bg {
+      height: 16px;
+      background: #2c2c40;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skills-box .bar-fill {
+      height: 100%;
+      background: #cc66ff;
+      border-radius: 10px;
+    }
+
+    /* Hard & Soft Skills Section */
+    section#hard-soft-skills {
+      max-width: 900px;
+      margin: 40px auto 120px;
+      padding: 40px;
+      background: #1b1937;
+      border-radius: 18px;
+      box-shadow: 0 0 30px rgba(204, 102, 255, 0.25);
+      display: flex;
+      gap: 60px;
+      color: #ddd;
+      font-family: 'Poppins', sans-serif;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    section#hard-soft-skills > div {
+      flex: 1 1 350px;
+    }
+
+    section#hard-soft-skills h3 {
+      color: #cc66ff;
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: 700;
+      border-bottom: 2px solid #cc66ff;
+      padding-bottom: 8px;
+    }
+
+    section#hard-soft-skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    section#hard-soft-skills ul li {
+      margin-bottom: 15px;
+      font-size: 17px;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 30px;
+      color: #eee;
+      cursor: default;
+      transition: color 0.3s;
+    }
+
+    section#hard-soft-skills ul li::before {
+      content: "\f00c"; /* FontAwesome check icon */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #cc66ff;
+      font-size: 16px;
+      transition: transform 0.3s;
+    }
+
+    section#hard-soft-skills ul li:hover {
+      color: #cc66ff;
+    }
+
+    section#hard-soft-skills ul li:hover::before {
+      transform: scale(1.3);
+      color: #ff99ff;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      section#hard-soft-skills {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Saeed B.</div>
+    <nav>
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#projects"><i class="fas fa-briefcase"></i> My Projects</a>
+      <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+    </nav>
+  </header>
+
+  <section class="main-menu">
+    <h1>Welcome to My Portfolio 👋</h1>
+    <div class="menu-buttons">
+      <a href="#about"><i class="fas fa-user"></i> About Me</a>
+      <a href="#linkedin"><i class="fab fa-linkedin"></i> My LinkedIn</a>
+      <a href="#projects"><i class="fas fa-briefcase"></i> My Projects</a>
+      <a href="#skills"><i class="fas fa-code"></i> My Skills</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <i class="fas fa-user-astronaut icon-left"></i>
+    <i class="fas fa-laptop-code icon-right"></i>
+    <h2>About Me</h2>
+    <p>
+      I’m Saeed Beheshti, born in 2004, and I’ve been working in the programming field for about a year and a half. <br />
+      I'm friendly, patient, dedicated, and always seeking improvement. I’d be happy to collaborate with you. <br /><br />
+
+      <strong>My skills include:</strong> <br />
+      Python (Advanced) <br />
+      MySQL (Intermediate) <br />
+      MongoDB (Intermediate) <br />
+      HTML & CSS (Intermediate) <br /><br />
+
+      <strong>Location:</strong> Tehran - Janat Abad <br />
+      <strong>Military Service Status:</strong> Educational Exemption <br />
+      <strong>Marital Status:</strong> Single <br />
+      <strong>Desired Job Position:</strong> Full-time On-site — As an Intern or Junior Developer <br /><br />
+
+      <strong>Email:</strong> <a href="mailto:saeedbeheshti83@gmail.com" style="color:#cc66ff; text-decoration:none;">saeedbeheshti83@gmail.com</a>
+    </p>
+  </section>
+
+  <section id="linkedin">
+    <h2>My LinkedIn</h2>
+    <p>Click here to view my LinkedIn profile.</p>
+    <a href="https://www.linkedin.com/in/saeed-beheshti-073869287/" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>Click here to view my projects on GitHub.</p>
+    <a href="https://github.com/SaeedBeheshti?tab=repositories" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-box">
+      <div>
+        <label>🐍 Python (Advanced)</label>
+        <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+      </div>
+      <div>
+        <label>🛢️ MySQL (Intermediate)</label>
+        <div class="bar-bg"><div class="bar-fill" style="width: 70%;"></div></div>
+      </div>
+      <div>
+        <label>🍃 MongoDB (Intermediate)</label>
+        <div class="bar-bg"><div class="bar-fill" style="width: 70%;"></div></div>
+      </div>
+      <div>
+        <label>🌐 HTML & CSS (Intermediate)</label>
+        <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+      </div>
+      <div>
+        <label>🇬🇧 English (Upper Intermediate)</label>
+        <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hard-soft-skills">
+    <div class="hard-skills">
+      <h3>Hard Skills</h3>
+      <ul>
+        <li>Familiarity with Object-Oriented Programming</li>
+        <li>Advanced Function Types</li>
+        <li>Working with Files and Error Handling</li>
+        <li>Principles of Inheritance and Encapsulation</li>
+        <li>And more...</li>
+      </ul>
+    </div>
+    <div class="soft-skills">
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Problem Solving and Emotional Control</li>
+        <li>Teamwork and Accepting Criticism</li>
+        <li>Active Learning</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
