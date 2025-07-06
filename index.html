@@ -152,27 +152,63 @@
       margin-bottom: 20px;
     }
 
-    section#linkedin p,
-    section#projects p {
+    section#linkedin p {
       font-size: 18px;
       color: #eee;
       margin-bottom: 40px;
     }
 
-    section#linkedin i.fab.fa-linkedin,
-    section#projects i.fab.fa-github {
+    section#linkedin i.fab.fa-linkedin {
       font-size: 80px;
       color: #eee;
       transition: 0.3s;
     }
 
-    section#linkedin i.fab.fa-linkedin:hover,
-    section#projects i.fab.fa-github:hover {
+    section#linkedin i.fab.fa-linkedin:hover {
       color: #cc66ff;
       transform: scale(1.1);
     }
 
-    /* My Skills Section */
+    /* Project Card Style */
+    .project-card {
+      background-color: #1f1a3a;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(204, 102, 255, 0.2);
+      max-width: 700px;
+      margin: 40px auto;
+      color: #ddd;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(204, 102, 255, 0.4);
+    }
+
+    .project-card h3 {
+      color: #cc66ff;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 40px;
+      color: #eee;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #cc66ff;
+    }
+
     section#skills {
       background-color: #0a0a1f;
       background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
@@ -223,7 +259,6 @@
       border-radius: 10px;
     }
 
-    /* Hard & Soft Skills Section */
     section#hard-soft-skills {
       max-width: 900px;
       margin: 40px auto 120px;
@@ -269,7 +304,7 @@
     }
 
     section#hard-soft-skills ul li::before {
-      content: "\f00c"; /* FontAwesome check icon */
+      content: "\f00c";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
@@ -289,7 +324,6 @@
       color: #ff99ff;
     }
 
-    /* Responsive */
     @media (max-width: 700px) {
       section#hard-soft-skills {
         flex-direction: column;
@@ -326,7 +360,7 @@
     <i class="fas fa-laptop-code icon-right"></i>
     <h2>About Me</h2>
     <p>
-      I’m Saeed Beheshti, born in 2004, and I’ve been working in the programming field for about a year and a half. <br />
+      I’m Saeed Beheshti.I’ve been working in the programming field for about a year and a half. <br />
       I'm friendly, patient, dedicated, and always seeking improvement. I’d be happy to collaborate with you. <br /><br />
 
       <strong>My skills include:</strong> <br />
@@ -335,10 +369,7 @@
       MongoDB (Intermediate) <br />
       HTML & CSS (Intermediate) <br /><br />
 
-      <strong>Location:</strong> Tehran - Janat Abad <br />
-      <strong>Military Service Status:</strong> Educational Exemption <br />
-      <strong>Marital Status:</strong> Single <br />
-      <strong>Desired Job Position:</strong> Full-time On-site — As an Intern or Junior Developer <br /><br />
+      <strong>Desired Job Position:</strong> Open to Internship, Contract, or Full-time Roles in Software Development <br /><br />
 
       <strong>Email:</strong> <a href="mailto:saeedbeheshti83@gmail.com" style="color:#cc66ff; text-decoration:none;">saeedbeheshti83@gmail.com</a>
     </p>
@@ -354,10 +385,29 @@
 
   <section id="projects">
     <h2>My Projects</h2>
-    <p>Click here to view my projects on GitHub.</p>
-    <a href="https://github.com/SaeedBeheshti?tab=repositories" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
+
+    <div class="project-card">
+      <h3>OOP-Based Educational Management System</h3>
+      <p>
+        A Python-based command-line application for managing students, teachers, courses, and employees using object-oriented principles such as inheritance, encapsulation, and polymorphism.
+      </p>
+      <p style="margin-top: 10px;">Click below to view the project:</p>
+      <a href="https://github.com/SaeedBeheshti/OOP-Coding" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Random Password Generator</h3>
+      <p>
+        A simple Python-based terminal application that generates strong, customizable passwords using the <code>random</code> and <code>string</code> modules. Includes options for length and character types (letters, digits, symbols). Great for practicing logic and user interaction with input/output.
+      </p>
+      <p style="margin-top: 10px;">Click below to view the project:</p>
+      <a href="https://github.com/SaeedBeheshti/Password-generator" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
   </section>
 
   <section id="skills">
